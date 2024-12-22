@@ -171,3 +171,6 @@ No more `cd`-ing around manually. `cd` a bunch of times once, `z` to wherever,
 from wherever. For example, instead of having to type `cd school/cs315/hw/project01`
 or `cd school` + `cd cs315`..., instead I can just `z t01`. 
 
+=== direnv
+#link("https://direnv.net/")
+
