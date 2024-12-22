@@ -60,9 +60,12 @@ out ones that take arguments. lEttER cAse is also important, as the upper and lo
 can be shared between functionality. Use a font that makes these things easy to distinguish!
 
 Finally, paths have specific reserved characters that have special meaning. `.` (dot)
-means "here", `..` "parent", `~` "home", `-` "last". If I am in my project directory
+means "here", `..`(dot dot) "parent", `~` "home", `-`(dash) "last", and `/` "root" (on it's own or at the start of path).
+If I am in my project directory
 `/home/tao/cs315/hw/project01` and want to get to my lecture recordings at `/home/tao/cs315/lectures`,
-I can `cd ../../lectures`. Then, to get back to work, `cd -`.
+I can `cd ../../lectures`. Then, to get back to work, `cd -`. Paths are always relative to `.`
+(dot), so if I'm in `/home/tao/cs315`, I don't have to type all of that to get to `/home/tao/cs315/lectures`;
+in this case, `cd lectures` == `cd ./lectures` == `cd ~/cs315/lectures` == `cd /home/tao/cs315/lectures`.
 
 #pagebreak()
 
@@ -77,6 +80,7 @@ I can `cd ../../lectures`. Then, to get back to work, `cd -`.
     [`cp`],[`(c)`o`(p)`y],
     [`mv`], [`(m)`o`(v)`e, rename],
     [`rm`], [`(r)`e`(m)`ove],
+    // [`cat`], [con`(cat)`enate, print contents of text file],
   ),
   table(
     columns: (auto, auto),
@@ -174,3 +178,55 @@ or `cd school` + `cd cs315`..., instead I can just `z t01`.
 === direnv
 #link("https://direnv.net/")
 
+Once you're done jumping directories with haste, why not also make sure that
+your project environments are set up automatically. You can actually combine
+direnv with nix and ensure your API keys are never hardcoded, and dependencies
+never conflicting systemwide.
+
+=== skim
+#link("https://github.com/skim-rs/skim")
+
+What's a fuzzy finder? It's a finder that finds fuzzily.
+
+Paired together with the next utility, you can find anything and everything.
+
+Simply run `sk`, type what you're looking for with any characters in the right order, and you'll magically get what you want.
+
+=== ripgrep
+#link("https://github.com/BurntSushi/ripgrep")
+#link("https://github.com/phiresky/ripgrep-all")
+
+Search the contents of every file for what you're looking for.
+
+=== tree
+Like `ls`, but deeper.
+
+=== bat
+#link("https://github.com/sharkdp/bat")
+
+`cat` but better. It has syntax highlighting and a pager.
+
+=== just
+#link("https://github.com/casey/just")
+
+`make` but better.
+
+=== ouch
+#link("https://github.com/ouch-org/ouch")
+
+Very fast and easy to understand file compression and decompression. No more memorizing `tar -xvf blah blah`.
+Use `.tzst` for the best ratios!
+
+=== sendme
+#link("https://www.iroh.computer/sendme")
+
+Easy p2p file yeeting.
+
+=== zellij
+#link("https://zellij.dev/")
+
+I heard you like terminals, so I put terminals in your terminals!
+
+Lets you run background tasks, organize your work, restore sessions, etc.
+
+=== tailscale
